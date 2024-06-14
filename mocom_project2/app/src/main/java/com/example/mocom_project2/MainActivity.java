@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 String email = joinEmail.getText().toString();
                 if (name.equals(checked2)&&check2) {
                     if (email.equals(checked)&&check) {
-                        if (joinPassword == joinPwck) {
+                        if (joinPassword.getText().toString().equals(joinPwck.getText().toString())) {
                             String password = joinPassword.getText().toString();
                             User user = new User(email, password, name);
 

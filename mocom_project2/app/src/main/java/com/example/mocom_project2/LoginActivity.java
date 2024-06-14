@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){
                             try {
-                                String responseString = response.body().toString();
+                                String responseString = response.body().string();
                                 // JSON 응답 처리
                                 JSONObject jsonObject = new JSONObject(responseString);
                                 String message = jsonObject.getString("message");
@@ -81,12 +81,12 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(LoginActivity.this, "응답 처리 중 오류 발생", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "응답 처리 중 오류 발생1", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else {
                             try {
-                                String jsonString = response.errorBody().toString();
+                                String jsonString = response.errorBody().string();
                                 JSONObject jsonObject = new JSONObject(jsonString);
                                 String message = jsonObject.getString("message");
 
@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             catch (Exception e) {
                                 e.printStackTrace();
-                                Toast.makeText(LoginActivity.this, "응답 처리 중 오류 발생", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "응답 처리 중 오류 발생2", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
