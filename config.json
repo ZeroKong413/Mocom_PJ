@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "zerokong",
-        "password": "lmh51878@",
+        "password": "1234",
         "database": "user",
         "host": "zerokongsql1.mysql.database.azure.com"
     }
